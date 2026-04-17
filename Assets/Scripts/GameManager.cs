@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerPrefab;
     public GameObject enemyOnePrefab;
+    public GameObject enemyTwoPrefab;
+    public GameObject enemyThreePrefab;
     public GameObject cloudPrefab;
     public GameObject gameOverText;
     public GameObject restartText;
@@ -41,9 +43,12 @@ public class GameManager : MonoBehaviour
         cloudMove = 1;
         gameOver = false;
         AddScore(0);
+
         Instantiate(playerPrefab, transform.position, Quaternion.identity);
         CreateSky();
         InvokeRepeating("CreateEnemy", 1, 3);
+        InvokeRepeating("SecondEnemy", 2, 3);
+        InvokeRepeating("ThirdEnemy", 3, 3);
         StartCoroutine(SpawnPowerup());
         powerupText.text = "No powerups yet!";
     }
@@ -60,6 +65,16 @@ public class GameManager : MonoBehaviour
     void CreateEnemy()
     {
         Instantiate(enemyOnePrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(180, 0, 0));
+    }
+
+    void SecondEnemy()
+    {
+        Instantiate(enemyTwoPrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(180, 0, 0));
+    }
+
+    void ThirdEnemy()
+    {
+        Instantiate(enemyThreePrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(180, 0, 0));
     }
 
     void CreatePowerup()

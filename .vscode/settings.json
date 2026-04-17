@@ -60,13 +60,13 @@
         "*.asset": "yaml",
         "*.meta": "yaml",
         "*.prefab": "yaml",
-        "*.unity": "yaml",
+        "*.unity": "yaml"
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Fighter Planes Spring 2025.slnx",
+    "dotnet.defaultSolution": "Fighter-Game-Updated.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
