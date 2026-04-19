@@ -34,9 +34,13 @@ public class GameManager : MonoBehaviour
 
     private bool gameOver;
 
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = audioPlayer.GetComponent<AudioSource>();
+
         horizontalScreenSize = 10f;
         verticalScreenSize = 6.5f;
         score = 0;
@@ -125,12 +129,8 @@ public class GameManager : MonoBehaviour
     {
         switch (whichSound)
         {
-            case 1:
-                audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerupSound);
-                break;
-            case 2:
-                audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerdownSound);
-                break;
+            case 1: audioSource.PlayOneShot(powerupSound); break;
+            case 2: audioSource.PlayOneShot(powerdownSound); break;
         }
     }
 
