@@ -120,6 +120,12 @@ public class PlayerController : MonoBehaviour
                     gameManager.ManagePowerupText(4);
                     break;
             }
+
+        }
+        else if (whatDidIHit.tag == "coin")
+        {
+            Destroy(whatDidIHit.gameObject);
+            gameManager.AddScore(1);
         }
     }
 
